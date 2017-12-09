@@ -50,6 +50,9 @@ void canonicalForm(char* str, size_t len) {
             case '7':
                 str[i] = 'T';
                 break;
+            case 'L':
+                str[i] = '1';
+                break;
         }
     }
 }

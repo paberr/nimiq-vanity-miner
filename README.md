@@ -21,6 +21,9 @@ Important: The longer the prefix, the longer it takes until an address is found.
 2. `max_rounds`: Using this option, you can limit the number of tries the program makes before giving up.
 3. `--exact-match`: By default, the program uses a mapping (see below) to find similar prefixes. If you activate this option, the program accepts only an exact match of the prefix.
 
+The program will output the current number of tries every 10000 steps.
+If a match is found, it will first output the beginning of the address and then a hex dump of the corresponding private key.
+
 ## Mapping
 By default, the program uses a mapping to represent missing or similar characters in the adress alphabet.
 A Nimiq address consists of only the following characters: `0123456789ABCDEFGHJKLMNPQRSTUVXY`.
@@ -35,5 +38,6 @@ The mapping is as follows:
 - 5 -> S
 - 6 -> G
 - 7 -> T
+- L -> 1
 
 That means that searching for the prefix `TEST` will also match addresses like `7E5T`.
